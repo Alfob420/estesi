@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos personalizados */
+@layer base {
+  body {
+    @apply bg-[#FAF9F6] text-gray-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 
+           text-white font-semibold py-2.5 px-5 rounded-lg 
+           transform hover:scale-105 transition-all duration-200
+           shadow-lg hover:shadow-indigo-500/30;
+  }
+
+  .btn-secondary {
+    @apply bg-white/90 hover:bg-white text-indigo-900 
+           font-semibold py-2.5 px-5 rounded-lg border border-indigo-100
+           transform hover:scale-105 transition-all duration-200
+           shadow-lg hover:shadow-indigo-200/50;
+  }
+
+  .card-hover {
+    @apply transform hover:scale-[1.02] transition-all duration-300
+           hover:shadow-xl hover:shadow-indigo-500/10
+           bg-gradient-to-br from-white/80 to-white/90
+           backdrop-blur-sm border border-indigo-100/50;
+  }
+
+  .nav-link {
+    @apply relative text-indigo-100 hover:text-white transition-colors duration-200
+           after:content-[''] after:absolute after:bottom-0 after:left-0 
+           after:w-0 after:h-0.5 after:bg-purple-400
+           after:transition-all after:duration-300
+           hover:after:w-full;
+  }
+
+  .nav-container {
+    @apply bg-[#001524] border-b border-gray-800;
+  }
+
+  .content-section {
+    @apply bg-gradient-to-br from-white/60 to-white/80
+           backdrop-blur-md rounded-2xl 
+           border border-indigo-100/50
+           shadow-xl shadow-indigo-500/5;
+  }
+
+  .info-card {
+    @apply bg-gradient-to-br from-indigo-900/90 to-purple-900/90
+           backdrop-blur-md rounded-xl
+           border border-white/20
+           shadow-lg shadow-indigo-900/20;
+  }
+
+  .action-button {
+    @apply bg-gradient-to-br from-indigo-500/10 to-purple-500/10
+           hover:from-indigo-500/20 hover:to-purple-500/20
+           backdrop-blur-sm rounded-xl
+           border border-white/30
+           transition-all duration-300;
+  }
+
+  .image-upload-box {
+    @apply relative aspect-square rounded-lg border-2 border-dashed 
+           transition-colors duration-200 cursor-pointer
+           flex flex-col items-center justify-center
+           overflow-hidden;
+  }
+
+  .image-upload-box:hover {
+    @apply border-indigo-400 bg-indigo-50/5;
+  }
+
+  .image-preview {
+    @apply absolute inset-0 bg-cover bg-center rounded-lg;
+  }
+
+  .image-preview-overlay {
+    @apply absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 
+           transition-opacity rounded-lg flex items-center justify-center;
+  }
+
+  .search-select {
+    @apply w-full bg-gray-900/10 text-gray-800 px-4 py-4 rounded-lg appearance-none
+           border border-gray-200 focus:border-[#008CBA] focus:ring-1 focus:ring-[#008CBA]
+           transition-all duration-200 text-lg font-medium
+           hover:bg-gray-900/5;
+  }
+
+  .btn-search {
+    @apply bg-[#008CBA] hover:bg-[#007A9E] text-white font-bold py-4 px-6 
+           rounded-lg transition-all duration-300 text-lg w-full
+           shadow-lg shadow-[#008CBA]/20 hover:shadow-xl hover:shadow-[#008CBA]/30;
+  }
+
+  .card {
+    @apply bg-white shadow-lg rounded-lg overflow-hidden
+           border border-gray-100 hover:border-[#008CBA] transition-all duration-200
+           hover:shadow-xl hover:shadow-[#008CBA]/10;
+  }
+
+  .search-container {
+    @apply bg-white/95 backdrop-blur-sm shadow-xl rounded-xl 
+           border border-gray-200/80
+           hover:shadow-2xl hover:shadow-[#008CBA]/5 transition-all duration-300;
+  }
+
+  .featured-section {
+    @apply bg-white/95 backdrop-blur-sm shadow-lg rounded-xl 
+           border border-gray-200/80 p-8 mb-12
+           hover:shadow-xl hover:shadow-[#008CBA]/5 transition-all duration-300;
+  }
+
+  .section-divider {
+    @apply py-12 bg-gradient-to-b from-transparent via-gray-100/50 to-transparent;
+  }
+
+  .page-section {
+    @apply py-16 relative;
+  }
+
+  .section-background {
+    @apply absolute inset-0 bg-gradient-to-b from-gray-50/50 to-white/50 -z-10;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2;
+  }
+
+  .hero-section {
+    @apply bg-gradient-to-b from-gray-50 to-white border-b border-gray-100 shadow-sm;
+  }
+}
+
+/* Animaciones */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Estilos para Swiper */
+.swiper {
+  @apply w-full h-full;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  @apply text-white !important;
+}
+
+.swiper-pagination-bullet {
+  @apply bg-white/60 !important;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-[#008CBA] !important;
+} 
